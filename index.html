@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    </head>
+    <body>
+    <style>
+        @keyframes maincircle {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+    
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+    
+  }
+}
+
+@keyframes front {
+  0% {
+    transform: rotate(-1020deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes right {
+  0% {
+    transform: translateX(600px);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    transform: translateX(68px);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateX(32px);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateX(8px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes left {
+  0% {
+    transform: translateX(-600px);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    transform: translateX(-68px);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateX(-28px);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateX(-8px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+}
+
+
+body {
+    margin:0;
+    padding:0;
+    position:fixed;
+}
+.container{
+    position:relative;
+    height:100vh;
+    width:100vw;
+    background-color:black;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:center;
+    align-items:center;
+    align-content:center;
+    margin:0;
+    padding:0;
+    
+}
+
+.tl, .tr, .bl, .br{
+    height:48%;
+    width:48%;
+    overflow:scroll;
+}
+
+.wish{
+    height:94%;
+    width:91%;
+    padding:2%;
+    background-color:green;
+    position:absolute;
+    overflow:scroll;
+    margin:1.5%;
+    background: rgba( 255, 255, 255, 0.20 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5.0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    font-family: 'Lora', serif;
+    text-shadow:1px 1px 2px #fff;   
+    animation: front 6s 6s ease-out both;
+   /* background: inherit;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);*/
+
+
+}
+
+.tl{
+    background-color:#418CCE;
+    background-image: radial-gradient(pink 15%, transparent 16%),
+radial-gradient(pink 15%, transparent 16%);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+       animation: left 2s 3s both;
+}
+
+.tr{
+    background-color:#5B3932;
+    background-image: radial-gradient(#15A672 15%, transparent 16%),
+radial-gradient(#15A672 15%, transparent 16%);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    animation: right 2s 4s both;
+}
+
+.bl{
+    background-color:#15A672;
+    background-image: radial-gradient(#5B3932 15%, transparent 16%),
+radial-gradient(#5B3932 15%, transparent 16%);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    animation: left 2s 5s both;
+}
+
+.br{
+    background-color:#D35385;
+    background-image: radial-gradient(#418CCE 15%, transparent 16%),
+radial-gradient(#418CCE 15%, transparent 16%);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    animation: right 2s 6s both;
+}
+
+.maincircle{
+    background-color: #c73e1d;
+    background-image: linear-gradient(319deg, #bbff99 0%, #ffec99 37%, #ff9999 100%);
+    height:50%;
+    width:80%;
+    border-radius:50%;
+    position:absolute;
+    box-shadow:7px 7px 20px #000,
+               -7px -7px 20px #000;
+       animation: maincircle 5s 15s both;
+
+}
+
+.bordercircle{
+    background-color:transparent;
+    border:5px dotted brown;
+    border-left-color: #5B3932;
+    border-right-color: #15A672;
+    border-top-color: #D35385;
+    border-bottom-color:#418CCE ;
+    height:90%;
+    width:90%;
+    margin:3.5%;
+    border-radius:50%;
+    position:absolute;
+    animation: maincircle 3s 18s both;
+    box-shadow: 5px 5px 15px 5px rgba(255,255,255,0.4), -5px -5px 15px 5px rgba(255,255,255,0.4);
+}
+
+.textcircle{
+    background:
+linear-gradient(324deg, #232927 4%,   transparent 4%) -70px 43px,
+linear-gradient( 36deg, #232927 4%,   transparent 4%) 30px 43px,
+linear-gradient( 72deg, #e3d7bf 8.5%, transparent 8.5%) 30px 43px,
+linear-gradient(288deg, #e3d7bf 8.5%, transparent 8.5%) -70px 43px,
+linear-gradient(216deg, #e3d7bf 7.5%, transparent 7.5%) -70px 23px,
+linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 30px 23px,
+linear-gradient(324deg, #232927 4%,   transparent 4%) -20px 93px,
+linear-gradient( 36deg, #232927 4%,   transparent 4%) 80px 93px,
+linear-gradient( 72deg, #e3d7bf 8.5%, transparent 8.5%) 80px 93px,
+linear-gradient(288deg, #e3d7bf 8.5%, transparent 8.5%) -20px 93px,
+linear-gradient(216deg, #e3d7bf 7.5%, transparent 7.5%) -20px 73px,
+linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 80px 73px;
+    background-color: #232927;
+    background-size: 100px 100px;
+    box-shadow: 8px 8px 15px rgba(0,0,0,0.5),
+                -8px -8px 15px rgba(0,0,0,0.5);
+    height:92%;
+    width:92%;
+    margin:4%;
+    border-radius:50%;
+    position:absolute;
+    display:flex;
+    justify-content:center;
+    place-items:center;
+    font-family: 'Poppins', sans-serif;
+    font-size:43px;
+    color:pink;
+    text-align:center;
+    animation:colorchange 5s infinite, maincircle 5s 21s both;
+    
+    
+}
+
+@keyframes colorchange{
+    0%{
+    color:#418CCE;
+    }
+    25%{
+    color:teal;
+    }
+    50%{
+    color:#15A672;
+    }
+    75%{
+    color:#D35385;
+    }
+    100%{
+    color:#fff;
+    }
+}
+
+
+
+    </style>
+    <script>
+       window.addEventListener("mouseover",play);
+window.addEventListener("click",play);
+function play() { document.getElementById("a").play();
+} 
+    </script>
+    <audio controls style=" display:none;" loop   id="a"  >
+ <source src="https://www.dropbox.com/s/bzzxsvssgl7hzaa/terayaarhunmein.mp3?raw=1">
+    <script>
+     Swal.fire('Happy birthday Raghav Bhaiya🎊\n A small try🧗‍♀️ to express my gratitude🤗 \n It is quite simple😕 and boring😥 as I am a beginner😔 ')
+        </script>  
+      </audio>    
+        <main class="container">
+            <div class="tl">
+              <div class="wish wish1">
+Bro, you are the umbrella<br>
+That shields me from hail, sun and rain<br>
+You are the healer<br>
+Who helps me deal with life’s pain<br>
+To me, you are more than just a brother<br>
+You are also my best friend<br>
+Thanks for your selfless love and affection<br>
+To which, there seems to be no end<br><br>
+You may be just one person<br>
+But many entities for me<br>
+From a trusted advisor<br>
+To my best buddy<br>
+You are one individual<br>
+But you encompass my universe<br>
+Without you, dear bro<br>
+My life would be a curse
+
+
+              
+                
+              </div> 
+            </div><!--end of class tl-->
+            <div class="bl">
+             <div class="wish wish2">
+                 
+God gave a gift to the world when you were born—<br>
+A person who loves, who cares,<br>
+Who sees a person's need and fills it,<br>
+Who encourages and lifts people up,<br>
+Who spends energy on others<br>
+Rather than himself,<br><br>
+Someone who touches each life he enters,<br>
+And makes a difference in the world,<br>
+Because ripples of kindness flow outward<br>
+As each person you have touched, touches others.<br><br>
+Your birthday deserves to be a national holiday,<br>
+Because you are a special treasure<br>
+For all that you've done.<br>
+May the love you have shown to others<br>
+Return to you, multiplied.<br><br>
+I wish you the happiest of birthdays,<br>
+And many, many more,<br>
+So that others have time to appreciate you<br>
+As much as I do.<br><br>
+                 
+             </div>   
+            </div><!--end of class tr-->
+            <div class="tr">
+             <div class="wish wish3">
+                 
+Some people give the gift<br>
+of peace and tranquility<br>
+to every life they touch.<br><br>
+They are always who they really are.<br>
+They are blessedly reliable,<br>
+dependably good,<br>
+predictably pleasant,<br>
+loved and treasured<br>
+by all who know them.<br><br>
+You are one of those people.<br>
+You are a gift<br>
+of peace and tranquility<br>
+in my life.<br><br>
+             </div>      
+            </div><!--end of class bl-->
+            <div class="br">
+             <div class="wish wish4">
+                 
+When I think of exceptional people I know,
+You're right at the front of the line.
+It's not for your power or status or wealth;
+It's because you make everyone shine.<br><br>
+
+When I want to see someone who’s special and fun,
+I don't have to think very hard,
+For one of the nicest people I know
+I can find in my own backyard.<br><br>
+             </div>      
+            </div><!--end of class br-->
+        <div class="maincircle">
+          <div class="bordercircle">
+             <div class="textcircle">
+             HAPPY BIRTHDAY 
+             </div>   
+          </div>          
+        
+            
+        </div><!--end of class maincircle-->
+        </main>
+    </body>
+</html>
